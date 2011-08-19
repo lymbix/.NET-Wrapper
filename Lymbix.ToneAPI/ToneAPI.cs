@@ -18,7 +18,12 @@ namespace Lymbix.ToneAPI
 
         private string authenticationKey = null;
 
-        /// <param name="authenticationKey">your Lymbix authentication key</param>
+        #region Constructors
+
+        /// <summary>
+        /// Constructor for the ToneAPI object
+        /// </summary>
+        /// <param name="authenticationKey">Your provided authentication key. You can get it at http://www.lymbix.com/account </param>
         public ToneAPI(string authenticationKey)
         {
             if (String.IsNullOrEmpty(authenticationKey))
@@ -29,9 +34,11 @@ namespace Lymbix.ToneAPI
             this.authenticationKey = authenticationKey;
         }
 
-        /* utility functions */
+        #endregion
 
-        private static string post(string url, string data, List<string> headers)
+        #region Utility Functions
+
+        private static string Post(string url, string data, List<string> headers)
         {
             HttpWebRequest httpRequest = (HttpWebRequest)HttpWebRequest.Create(url);
             httpRequest.Method = "POST";
@@ -65,14 +72,16 @@ namespace Lymbix.ToneAPI
             return headers;
         }
 
-        /* api methods */
+        #endregion
+
+        #region API Methods
 
         /// <summary>
-        /// tonalize multiple articles
+        /// Tonalize multiple articles
         /// </summary>
-        /// <param name="articles">articles to tonalize</param>
-        /// <param name="options">additional parameters (reference_ids and return_fields)</param>
-        /// <returns>see the api documentation for the format of this object</returns>
+        /// <param name="articles">Articles to tonalize</param>
+        /// <param name="options">Additional parameters (reference_ids and return_fields)</param>
+        /// <returns>See the api documentation for the format of this object</returns>
         public ArticleInfo[] TonalizeMultiple(List<string> articles, Dictionary<string, string> options = null)
         {
             if (articles == null)
@@ -93,16 +102,16 @@ namespace Lymbix.ToneAPI
             }
 
             List<string> headers = getHeaders();
-            string response = post(url, data, headers);
+            string response = Post(url, data, headers);
             return JsonConvert.DeserializeObject<ArticleInfo[]>(response);
         }
 
         /// <summary>
-        /// tonalize an article
+        /// Tonalize an article
         /// </summary>
-        /// <param name="articles">article to tonalize</param>
-        /// <param name="options">additional parameters (reference_id and return_fields)</param>
-        /// <returns>see the api documentation for the format of this object</returns>
+        /// <param name="articles">Article to tonalize</param>
+        /// <param name="options">Additional parameters (reference_id and return_fields)</param>
+        /// <returns>See the api documentation for the format of this object</returns>
         public ArticleInfo TonalizeDetailed(string article, Dictionary<string, string> options = null)
         {
             if (article == null)
@@ -122,16 +131,16 @@ namespace Lymbix.ToneAPI
             }
 
             List<string> headers = getHeaders();
-            string response = post(url, data, headers);
+            string response = Post(url, data, headers);
             return JsonConvert.DeserializeObject<ArticleInfo>(response);
         }
 
         /// <summary>
-        /// tonalize an article
+        /// Tonalize an article
         /// </summary>
-        /// <param name="articles">article to tonalize</param>
-        /// <param name="options">additional parameters (reference_id and return_fields)</param>
-        /// <returns>see the api documentation for the format of this object</returns>
+        /// <param name="articles">Article to tonalize</param>
+        /// <param name="options">Additional parameters (reference_id and return_fields)</param>
+        /// <returns>See the api documentation for the format of this object</returns>
         public ArticleInfo Tonalize(string article, Dictionary<string, string> options = null)
         {
             if (article == null)
@@ -151,19 +160,19 @@ namespace Lymbix.ToneAPI
             }
 
             List<string> headers = getHeaders();
-            string response = post(url, data, headers);
+            string response = Post(url, data, headers);
             return JsonConvert.DeserializeObject<ArticleInfo>(response);
         }
 
         /// <summary>
-        /// flag a response as inaccurate
+        /// Flag a response as inaccurate
         /// </summary>
-        /// <param name="phrase">the phrase that returns an inaccurate response</param>
-        /// <param name="apiMethod">the method that returns an inaccurate response</param>
-        /// <param name="apiVersion">the version that returns an inaccurate response</param>
-        /// <param name="callbackUrl">a url to call when the phrase has been re-rated</param>
-        /// <param name="options">additional parameters (reference_id)</param>
-        /// <returns>see the api documentation for this method's response</returns>
+        /// <param name="phrase">The phrase that returns an inaccurate response</param>
+        /// <param name="apiMethod">The method that returns an inaccurate response</param>
+        /// <param name="apiVersion">The version that returns an inaccurate response</param>
+        /// <param name="callbackUrl">A url to call when the phrase has been re-rated</param>
+        /// <param name="options">Additional parameters (reference_id)</param>
+        /// <returns>See the api documentation for this method's response</returns>
         public string FlagResponse(string phrase, string apiMethod = null,
             string apiVersion = "2.2", string callbackUrl = null, Dictionary<string, string> options = null)
         {
@@ -188,8 +197,11 @@ namespace Lymbix.ToneAPI
             }
 
             List<string> headers = getHeaders();
-            string response = post(url, data, headers);
+            string response = Post(url, data, headers);
             return response;
         }
+
+        #endregion
+
     }
 }
