@@ -1,0 +1,21 @@
+This wrapper lets .Net developers easily use the Lymbix Sentiment Analysis API.
+
+It provides the public functions of the API including: 
+  - Tonalize
+  - Tonalize Detailed
+  - Tonalize Multiple
+  - Flag Response
+
+------------------------------------------------------------------------------------------------------------
+
+This wrapper is compiled for .Net 4.0 since the most stable version of the JSON library is compiled to 4.0.
+
+If you need to use .Net 3.5, follow these steps:
+
+  - Download the latest release oof the 3.5 Newtonsoft JSON library from http://json.codeplex.com/
+  - Replace the Newtonsoft.Json.dll file in the project with the 3.5 version you downloaded
+  - Re-add the file in the project's References. ( optional )
+  - In the project's properties, change the Target Framework to 3.5 (or 3.5 Client Profile)
+  - Compile the project
+
+------------------------------------------------------------------------------------------------------------
