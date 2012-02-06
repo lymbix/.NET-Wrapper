@@ -10,7 +10,7 @@ namespace Lymbix.ToneAPI
 {
     public class ToneAPI
     {
-        private const string API_BASE = "https://gyrus.lymbix.com/";
+        private const string API_BASE = "https://api.lymbix.com/";
         private const string TONALIZE_MULTIPLE = "tonalize_multiple";
         private const string TONALIZE_DETAILED = "tonalize_detailed";
         private const string TONALIZE = "tonalize";
