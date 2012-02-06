@@ -1,0 +1,6 @@
+C:\Users\bsmith.LYMBIX\Documents\Visual Studio 2008\Projects\ToneAPI\ToneAPI\bin\Debug\ToneAPI.dll
+C:\Users\bsmith.LYMBIX\Documents\Visual Studio 2008\Projects\ToneAPI\ToneAPI\bin\Debug\ToneAPI.pdb
+C:\Users\bsmith.LYMBIX\Documents\Visual Studio 2008\Projects\ToneAPI\ToneAPI\bin\Debug\Newtonsoft.Json.dll
+C:\Users\bsmith.LYMBIX\Documents\Visual Studio 2008\Projects\ToneAPI\ToneAPI\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\bsmith.LYMBIX\Documents\Visual Studio 2008\Projects\ToneAPI\ToneAPI\obj\Debug\ToneAPI.dll
+C:\Users\bsmith.LYMBIX\Documents\Visual Studio 2008\Projects\ToneAPI\ToneAPI\obj\Debug\ToneAPI.pdb
